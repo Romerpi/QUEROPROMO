@@ -65,7 +65,7 @@
 }
 
 .hero-gradient {
-  background: linear-gradient(135deg, oklch(0.6 0.24 27) 0%, oklch(0.55 0.22 15) 50%, oklch(0.5 0.22 350) 100%);
+  background: linear-gradient(135deg, #2BA6E0 0%, #1C72C7 50%, #0A3A8C 100%);
 }
 
 .card-shadow { box-shadow: 0 10px 30px -10px rgba(0,0,0,0.15); }
