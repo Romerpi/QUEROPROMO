@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import { Tag, Percent, ShoppingBag, Sparkles, Zap, Rocket, Check, Star, BadgeCheck, ShoppingCart, ShieldCheck } from "lucide-react";
 import logo from "../assets/logo-achadinhos.jpg";
 
