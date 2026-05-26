@@ -35,6 +35,7 @@ function pickTwoNames() {
 
 function Index() {
   const [names, setNames] = useState<string[]>([NAMES[0], NAMES[1]]);
+  const [members, setMembers] = useState<number>(18155);
   useEffect(() => {
     setNames(pickTwoNames());
     let timeoutId: ReturnType<typeof setTimeout>;
@@ -46,7 +47,19 @@ function Index() {
       }, ms);
     };
     schedule();
-    return () => clearTimeout(timeoutId);
+    let memberTimeoutId: ReturnType<typeof setTimeout>;
+    const scheduleMembers = () => {
+      const ms = 5000 + Math.random() * 10000;
+      memberTimeoutId = setTimeout(() => {
+        setMembers((m) => m + 1);
+        scheduleMembers();
+      }, ms);
+    };
+    scheduleMembers();
+    return () => {
+      clearTimeout(timeoutId);
+      clearTimeout(memberTimeoutId);
+    };
   }, []);
   return (
     <main className="min-h-screen bg-background">
@@ -145,7 +158,7 @@ function Index() {
 
       <div className="text-center py-6 px-4">
         <p className="text-muted-foreground text-base md:text-lg">
-          JÁ SOMOS <span className="text-primary font-bold text-xl md:text-2xl">68.957</span> MEMBROS{" "}
+          JÁ SOMOS <span className="text-primary font-bold text-xl md:text-2xl">{members.toLocaleString("pt-BR")}</span> MEMBROS{" "}
           <span className="inline-flex items-center gap-1 whitespace-nowrap">(crescendo agora <Sparkles className="w-4 h-4 text-warning" />)</span>
         </p>
       </div>
