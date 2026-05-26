@@ -34,6 +34,20 @@ function pickTwoNames() {
 }
 
 function Index() {
+  const [names, setNames] = useState<string[]>([NAMES[0], NAMES[1]]);
+  useEffect(() => {
+    setNames(pickTwoNames());
+    let timeoutId: ReturnType<typeof setTimeout>;
+    const schedule = () => {
+      const ms = 15000 + Math.random() * 15000;
+      timeoutId = setTimeout(() => {
+        setNames(pickTwoNames());
+        schedule();
+      }, ms);
+    };
+    schedule();
+    return () => clearTimeout(timeoutId);
+  }, []);
   return (
     <main className="min-h-screen bg-background">
       <section className="hero-gradient relative min-h-[280px] flex flex-col items-center justify-center px-4 py-10 overflow-hidden">
