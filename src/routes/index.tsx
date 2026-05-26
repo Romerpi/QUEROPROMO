@@ -27,7 +27,7 @@ function Index() {
         <div className="bg-card rounded-3xl card-shadow p-6 md:p-8 max-w-lg mx-auto -mt-8 relative z-10">
           <div className="text-center">
             <h2 className="text-xl md:text-2xl font-bold text-primary flex items-center justify-center gap-2 mb-3">
-              <span className="text-2xl">🛒</span>Entre agora no grupo Achadinhos DuEdu!
+              <span className="text-2xl">🛒</span>Entre agora no grupo Achadinhos QUEROPROMO!
             </h2>
             <div className="flex items-center justify-center gap-2 text-warning font-semibold mb-5">
               <Zap className="w-4 h-4 fill-warning" />
