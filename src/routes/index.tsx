@@ -4,7 +4,7 @@ import logo from "../assets/logo-achadinhos.jpg";
 
 export const Route = createFileRoute("/")({ component: Index });
 
-const GROUP_URL = "#";
+const GROUP_URL = "https://chat.whatsapp.com/Bp1lHQKNsc5BalzAM0FWuo";
 
 function Index() {
   return (
