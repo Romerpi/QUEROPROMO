@@ -35,6 +35,7 @@ function pickTwoNames() {
 
 function Index() {
   const [names, setNames] = useState<string[]>([NAMES[0], NAMES[1]]);
+  const [members, setMembers] = useState<number>(18155);
   useEffect(() => {
     setNames(pickTwoNames());
     let timeoutId: ReturnType<typeof setTimeout>;
@@ -46,7 +47,19 @@ function Index() {
       }, ms);
     };
     schedule();
-    return () => clearTimeout(timeoutId);
+    let memberTimeoutId: ReturnType<typeof setTimeout>;
+    const scheduleMembers = () => {
+      const ms = 5000 + Math.random() * 10000;
+      memberTimeoutId = setTimeout(() => {
+        setMembers((m) => m + 1);
+        scheduleMembers();
+      }, ms);
+    };
+    scheduleMembers();
+    return () => {
+      clearTimeout(timeoutId);
+      clearTimeout(memberTimeoutId);
+    };
   }, []);
   return (
     <main className="min-h-screen bg-background">
