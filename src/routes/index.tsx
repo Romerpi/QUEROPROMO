@@ -6,6 +6,32 @@ export const Route = createFileRoute("/")({ component: Index });
 
 const GROUP_URL = "https://chat.whatsapp.com/Bp1lHQKNsc5BalzAM0FWuo";
 
+const NAMES = [
+  "Alice","Aline","Amanda","Ana","Ana Clara","Analu","Antônia","Antonella","Ariana","Aurora",
+  "Beatriz","Bianca","Bruna","Camila","Carolina","Cecília","Clara","Clarice","Diana","Eduarda",
+  "Elisa","Eloá","Emilly","Esther","Eva","Fabiana","Fernanda","Francisca","Gabriela","Giovanna",
+  "Giulia","Graziela","Helena","Heloísa","Isabel","Isabela","Isadora","Isis","Jéssica","Júlia",
+  "Juliana","Karen","Larissa","Laura","Lavínia","Letícia","Lívia","Lorena","Luana","Luiza",
+  "Luna","Maitê","Manuela","Marcela","Marcia","Maria","Maria Alice","Maria Cecília","Maria Clara",
+  "Maria Eduarda","Maria Fernanda","Maria Júlia","Mariana","Marina","Melissa","Milena","Mirela",
+  "Natália","Nicole","Olívia","Paloma","Patrícia","Rafaela","Rebeca","Valentina",
+  "Alexandre","André","Anthony","Antônio","Arthur","Augusto","Breno","Bruno","Caio","Carlos",
+  "Cauã","Cauê","Caetano","Daniel","Danilo","Davi","Davi Lucca","Diego","Diogo","Eduardo",
+  "Emanuel","Enzo","Enzo Gabriel","Eric","Erick","Felipe","Fernando","Francisco","Frederico",
+  "Gabriel","Gael","Giovanni","Guilherme","Gustavo","Heitor","Henrique","Hugo","Ian","Igor",
+  "Isaac","João","João Gabriel","João Lucas","João Miguel","João Pedro","Joaquim","José",
+  "Kaique","Kauã","Kevin","Leandro","Leonardo","Levi","Lucas","Lucca","Luiz","Manuel",
+  "Marcelo","Marcos","Marcus","Matheus","Miguel","Murilo","Nicolas","Noah","Otávio","Pablo",
+  "Paulo","Pedro","Rafael","Raí","Raul","Ravi","Rodrigo",
+];
+
+function pickTwoNames() {
+  const a = Math.floor(Math.random() * NAMES.length);
+  let b = Math.floor(Math.random() * NAMES.length);
+  if (b === a) b = (b + 1) % NAMES.length;
+  return [NAMES[a], NAMES[b]];
+}
+
 function Index() {
   return (
     <main className="min-h-screen bg-background">
@@ -37,10 +63,7 @@ function Index() {
               <Rocket className="w-4 h-4 md:w-5 md:h-5 mr-2" />QUERO ENTRAR NO GRUPO!
             </a>
             <div className="space-y-2 my-4">
-              {[
-                { name: "Priscila", delay: 0 },
-                { name: "Carlos", delay: 100 },
-              ].map((u) => (
+              {pickTwoNames().map((name, i) => ({ name, delay: i * 100 })).map((u) => (
                 <div key={u.name} className="flex items-center gap-3 bg-card border border-border rounded-xl px-4 py-3 card-shadow" style={{ animationDelay: `${u.delay}ms` }}>
                   <div className="bg-success/20 p-1.5 rounded-md shrink-0"><Check className="w-4 h-4 text-success" /></div>
                   <p className="text-card-foreground text-sm"><span className="font-semibold">{u.name}</span><span className="text-muted-foreground"> entrou no grupo agora</span></p>
