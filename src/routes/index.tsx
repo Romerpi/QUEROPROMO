@@ -78,7 +78,7 @@ function Index() {
               <Rocket className="w-4 h-4 md:w-5 md:h-5 mr-2" />QUERO ENTRAR NO GRUPO!
             </a>
             <div className="space-y-2 my-4">
-              {pickTwoNames().map((name, i) => ({ name, delay: i * 100 })).map((u) => (
+              {names.map((name, i) => ({ name, delay: i * 100 })).map((u) => (
                 <div key={u.name} className="flex items-center gap-3 bg-card border border-border rounded-xl px-4 py-3 card-shadow" style={{ animationDelay: `${u.delay}ms` }}>
                   <div className="bg-success/20 p-1.5 rounded-md shrink-0"><Check className="w-4 h-4 text-success" /></div>
                   <p className="text-card-foreground text-sm"><span className="font-semibold">{u.name}</span><span className="text-muted-foreground"> entrou no grupo agora</span></p>
