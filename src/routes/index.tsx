@@ -70,7 +70,7 @@ function Index() {
         <div className="absolute bottom-8 right-8 text-primary-foreground/50 sparkle" style={{ animationDelay: "0.7s" }}><Sparkles className="w-5 h-5" /></div>
         <div className="relative mb-4">
           <div className="w-40 h-40 rounded-2xl overflow-hidden shadow-2xl">
-            <img src={logo} alt="QUEROPROMO" className="w-full h-full object-cover" width={1024} height={1024} />
+            <img src={logo} alt="QUEROPROMO" className="w-full h-full object-cover" width={320} height={320} fetchPriority="high" decoding="async" />
           </div>
         </div>
         <h1 className="text-2xl md:text-3xl font-extrabold text-primary-foreground mb-1.5 text-center tracking-tight">QUEROPROMO</h1>
