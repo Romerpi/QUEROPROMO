@@ -72,14 +72,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "queropromo" },
+      { name: "description", content: "Já se mimou hoje? 🎁✨ Se ainda não, vem pro meu grupo de ofertas! 🛍️ Garanta os melhores achadinhos, com preços imperdíveis e aquele mimo que você merece. 💖 E" },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "queropromo" },
+      { property: "og:description", content: "Já se mimou hoje? 🎁✨ Se ainda não, vem pro meu grupo de ofertas! 🛍️ Garanta os melhores achadinhos, com preços imperdíveis e aquele mimo que você merece. 💖 E" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "queropromo" },
+      { name: "twitter:description", content: "Já se mimou hoje? 🎁✨ Se ainda não, vem pro meu grupo de ofertas! 🛍️ Garanta os melhores achadinhos, com preços imperdíveis e aquele mimo que você merece. 💖 E" },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/85OlhevhbTeDmhXIXAkteIGYs8A2/social-images/social-1779899645137-photo_2026-05-11_21-02-47.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/85OlhevhbTeDmhXIXAkteIGYs8A2/social-images/social-1779899645137-photo_2026-05-11_21-02-47.webp" },
     ],
     links: [
       {
